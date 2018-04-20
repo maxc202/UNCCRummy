@@ -47,6 +47,6 @@ public:
     else if(char == 'c'){
       cout << "Clubs";
     }
-}
+};
 
 #endif
