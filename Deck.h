@@ -1,0 +1,21 @@
+#ifndef DECK_H
+#define DECK_H
+
+#include <iostream>
+#include "Card.h"
+using namespace std;
+
+class Deck{
+private:
+  Card* deck[52];
+public:
+  Deck(){
+    for(int i = 0; i < 13; i++){
+      for(int j = 0; j < 4; j++
+
+
+
+
+
+
+};
