@@ -21,7 +21,7 @@ private:
     bool face; //If true, facecard.
 public:
     //Constructor
-    Card(int s, int ord); //Only one constructor, we don't need facecards without attributes
+    Card(int s, int ord); //Only one constructor, we don't need cards without attributes
     //Getters
     string getSuit();
     string getPip();
