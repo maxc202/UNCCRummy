@@ -7,16 +7,16 @@ using namespace std;
 class Card(){
 private:
   int value; //1-13 (Ace through King)
-  char suit; //d h s c
+  int suit; //0 1 2 3
 public:
   //Default constructor makes Ace of Spades
   Card(){
     value = 1;
-    char = 's';
+    suit = 0;
   }
-  Card(int v, char c){
+  Card(int v, int c){
     value = v;
-    char = c;
+    suit = c;
   }
   void output(){
     if(value == 1){
@@ -35,16 +35,16 @@ public:
       cout << value << " of ";
     }
     
-    if(char == 'd'){
+    if(suit == 1){
       cout << "Diamonds";
     }
-    else if(char == 's'){
+    else if(suit == 0){
       cout << "Spades";
     }
-    else if(char == 'h'){
+    else if(suit == 2){
       cout << "Hearts";
     }
-    else if(char == 'c'){
+    else if(suit == 3){
       cout << "Clubs";
     }
 };
