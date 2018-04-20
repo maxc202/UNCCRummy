@@ -7,7 +7,7 @@ using namespace std;
 
 class Deck{
 private:
-  Card* deck[52];
+  Card deck[52];
 public:
   Deck(){
     int count = 0;
@@ -23,8 +23,8 @@ public:
   
   void output(){
     for(int i = 0; i < 52; i++){
-      deck[i]->output();
-      cout << endl;
+      deck[i].output();
+      cout << endl; 
     }
   }
 };
