@@ -17,17 +17,18 @@ class Card {
 private:
     string suit, pip; //Suit should be obvious, pip is the "name" of the card "Jack" or "10"
     string symbol; //Unicode Symbol for the Suit
-    int scoreval, order; /* Scoreval is the is 10 for a facecard, and the number for the number card.  Order is the ordering of the card: Ace is 1, Two is 2, etc. */
+    int scoreval, order, suitnum; /* Scoreval is the is 10 for a facecard, and the number for the number card.  Order is the ordering of the card: Ace is 1, Two is 2, etc. */
     bool face; //If true, facecard.
 public:
     //Constructor
-    Card(int s, int ord); //Only one constructor, we don't need cards without attributes
+    Card(int s, int ord); //Only one constructor, we don't need facecards without attributes
     //Getters
     string getSuit();
     string getPip();
     int getScoreval();
     int getOrder();
-    //Overloaded Output Operator
+    //Overloaded Operators
+    bool operator < (const Card &);
     friend ostream& operator << (ostream &, Card & ); /*
     J
     ❤

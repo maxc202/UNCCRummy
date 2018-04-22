@@ -1,10 +1,3 @@
-//
-//  Card.cpp
-//  Rummy
-//
-//  Created by Maksim Chayun on 4/18/18.
-//  Copyright © 2018 Maksim Chayun. All rights reserved.
-//
 
 #include "Card.h"
 #include <iostream>
@@ -18,21 +11,25 @@ Card::Card(int s, int ord)
     {
         suit = "Spades";
         symbol = "\u2660";
+        suitnum = 1;
     }
     else if(s==2)
     {
         suit = "Hearts";
         symbol = "\u2764";
+        suitnum = 2;
     }
     else if(s==3)
     {
         suit = "Diamonds";
         symbol = "\u2666";
+        suitnum = 3;
     }
     else if(s==4)
     {
         suit = "Clubs";
         symbol = "\u2663";
+        suitnum = 4;
     }
     
     if(ord>10)
@@ -89,6 +86,16 @@ int Card::getOrder()
     return order;
 }
 
+bool Card::operator < (const Card &right)
+{
+    if(suitnum < right.suitnum)
+        return true;
+    else if((suitnum==right.suitnum)&&(order<right.order))
+        return true;
+    else
+        return false;
+}
+
 ostream& operator << (ostream &strm, Card &French)
 {
     if(French.order==10)
@@ -101,3 +108,5 @@ ostream& operator << (ostream &strm, Card &French)
     }
     return strm;
 }
+
+
