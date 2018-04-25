@@ -30,8 +30,7 @@ public:
     //Overloaded Operators
     bool operator < (const Card &);
     friend ostream& operator << (ostream &, Card & ); /*
-    J
-    ❤
+    J❤
     */
 };
 
