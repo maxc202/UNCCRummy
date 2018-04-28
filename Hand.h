@@ -18,9 +18,19 @@ public:
       this.draw(vector<Card*> deck);
   }
   
-  void draw(vector<Card*> deck){
+  void draw(vector<Card*>& deck){
     hand.push_back(deck[0]);
+    deck.pop_back();
   }
-
-
+  
+  Card* discard(Cardvector<Card*>& discard){
+   // temp = 
+  }
+      
+  void findMelds(){
+    //Find sets
+    for(int i = 0; i < hand.size(); i++){
+      int count = 1;
+      for(int j = 0;
+  }
 };
