@@ -1,0 +1,112 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+#include "Card.h"
+
+using namespace std;
+
+void ClearScreen();
+int Menu();
+void Instructions();
+void PlayerVCpu();
+//**************************************************************************
+int main(){
+
+int menuSelection = 0;
+ClearScreen();
+while(menuSelection == 0)
+{
+	menuSelection = Menu();
+	if(menuSelection == 1)
+	{
+		PlayerVCpu();
+	}
+	if(menuSelection == 2)
+	{
+		Instructions();
+		menuSelection = 0;
+	}
+	if(menuSelection == 3)
+	{
+		return 0;
+	}
+}
+}
+
+//**************************************************************************
+void ClearScreen()
+{
+for(int i = 0; i < 50; ++i)
+{
+cout << endl;
+}
+}
+//**************************************************************************
+int Menu()
+{
+string selection = "";
+bool keepAsk = true;
+
+cout << "GIN RUMMY" << endl << endl;
+cout << "1. Player vs CPU" << endl;
+cout << "2. Instructions" << endl;
+cout << "3. Quit" << endl;
+
+while (keepAsk)
+{
+	cout << "Enter a number 1-3: ";
+	cin >> selection;
+
+if(selection.size() == 1 && isdigit(selection[0]) && selection[0] == '1' || selection[0] == '2' || selection[0] == '3')
+{
+	if(selection[0] == '1')
+	{
+		return 1;
+	}
+	if(selection[0] == '2')
+	{
+		return 2;
+	}
+	if(selection[0] == '3')
+	{
+		return 3;
+	}
+}
+}
+
+}
+//**************************************************************************
+void Instructions()
+{
+ClearScreen();
+cout << "How to Play:" << endl << endl;
+cout << "Objective:" << endl;
+cout << "The purpose of the game is to create as many Runs or Sets with your cards before your opponent." << endl;
+cout << "A Run is when you have 3 or more cards of the same suit in sequence." << endl;
+cout << "EX: Having 7, 8, and 9 of Clubs will be considered a Run." << endl;
+cout << "A Set is when you have 3, or even four, of a kind." << endl;
+cout << "EX: Having a 3 of Spades, 3 of Diamonds, and 3 of Hearts would be considered a Set." << endl << endl;
+cout << "Dealing:" << endl;
+cout << "A coin flip will decided whether the player or the computer will go first." << endl;
+cout << "Each player is dealt seven cards, alternating between each player until both player's hand reaches seven." << endl;
+cout << "After each person is dealt seven cards, a card from the top of the deck is then flipped to create the Discard Pile." << endl << endl;
+cout << "Gameplay:" << endl;
+cout << "Whoever is first will decided if they either want to take the card in the Discard Pile or choose a new card from the deck." << endl;
+cout << "If they decided to take from the discard they will put it into their hand and also drop another card in the discard pile face up." << endl;
+cout << "If they decided to take from the deck they will draw the top card and decided whether they want to take that card and drop another card into the Discard Pile, or just drop the card they drew into the Discard Pile and end their turn." << endl;
+cout << "Turns will alternate as so until someone has made Runs or Sets will all the cards in their hand, or until someone Knocks" << endl << endl;
+cout << "Scoring:" << endl;
+cout << "There are two ways to end a game. The first way is to go into Gin. Gin is when a player has created either Runs or Sets with every card in his or her hand." << endl;
+cout << "The person that scored Gin will sum up the face value of each of his opponent's UNMATCHED cards and add 20 points to it and add it to his overall score. The person that did NOT reach Gin will recieve no points." << endl;
+cout << "Another way to end a round is to Knock.When the face value of all of you unmatched cards are less than 10 then they can Knock and end the round. When a Knock is called the player that DID NOT knock can Layoff his unmatched cards and match them to his opponents cards." << endl;
+cout << "The person that did knock will take the sum of his opponents unmatch cards and subtract it to the sum of his own unmatched cards. If the total value is negative then the person that knocked gets those points. If it is positive then the person that did NOT knock will get the points." << endl;
+}
+//*******************************************************************************
+void PlayerVCpu()
+{
+cout << "Howdy." << endl;
+}
+//*******************************************************************************
