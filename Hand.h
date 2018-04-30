@@ -36,11 +36,11 @@ void sortSets(){
     sort(sets.begin(), sets.end(), dumbsort);
 }
                                    
-  Card* discard(int num){
+Card* discard(int num){
     Card* temp = hand[num];
     hand.erase(num);
     return temp;
-  }
+}
                                 
 void retMelds(){
      for(int i = 0; i < runs.size(); i++){
@@ -53,13 +53,13 @@ void retMelds(){
      sets.clear();2 
 }
   
-  int checkDeadwood(){
+int checkDeadwood(){
     int deadwood = 0
     for(int i = 0; i < hand.size()-1; i++){
       deadwood += hand[i].getScoreVal();
     }
     return deadwood;
-  }
+}
           
 void findSets()
 {
