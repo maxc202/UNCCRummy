@@ -100,11 +100,11 @@ ostream& operator << (ostream &strm, Card &French)
 {
     if(French.order==10)
     {
-        strm << French.pip.substr(0,2) << French.symbol << " " ;
+        strm << "[" << French.pip.substr(0,2) << French.symbol << "]" << " " ;
     }
     else if(French.order != 10)
     {
-        strm << French.pip.substr(0,1) << French.symbol << " " ;
+        strm << "[" << French.pip.substr(0,1) << French.symbol << "]" << " " ;
     }
     return strm;
 }
