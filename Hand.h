@@ -100,7 +100,7 @@
 	    {
 	        int curr = k;
 	        int count = 1;
-	        while((hand[curr+1]->getOrder() == hand[curr]->getOrder+1) && (hand[curr]->getSuit == hand[curr+1]->getSuit)
+	        while((hand[curr+1]->getOrder() == hand[curr]->getOrder()+1) && (hand[curr]->getSuit() == hand[curr+1]->getSuit())
 	        {
 	            count++;
 	        }
