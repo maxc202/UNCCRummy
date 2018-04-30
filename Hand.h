@@ -7,6 +7,9 @@
 #include "Card.h"
 
 using namespace std;
+bool way2sort(Card* i, Card* j) {return *i < *j;}
+bool dumbsort(Card* i, Card* j) {return *i > *j;}
+
 
 class Hand{
 private:
@@ -14,25 +17,24 @@ private:
   vector<Card*> runs;
   vector<Card*> sets;
 public:
-  
-  bool way2sort(Card* i, Card* j) {return *i < *j);
-  bool dumbsort(Card* i, Card* j) {return *i > *j);
                                    
   void draw(Card* a){
     hand.push_back(a);
   }
    
-  void sortHand(){                                 
-    sort(hand.begin(), hand.end(), way2Sort);                                 
-  }
-                                   
-  void sortRuns(){
-      sort(runs.begin(), runs.end(), way2Sort);
-  }
-                                   
-  void sortSets(){
-   sort(sets.begin(), sets.end(), dumbsort); 
-  }
+void sortHand()
+{
+    sort(hand.begin(), hand.end() , way2sort);
+}
+            
+void sortRuns(){
+    
+    sort(runs.begin(), runs.end(), way2sort);
+}
+            
+void sortSets(){
+    sort(sets.begin(), sets.end(), dumbsort);
+}
                                    
   Card* discard(int num){
     Card* temp = hand[num];
