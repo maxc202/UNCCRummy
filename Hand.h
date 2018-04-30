@@ -23,7 +23,7 @@ public:
     deck.pop_back();
   }
   
-  Card* discard(int num, Cardvector<Card*>& discard){
+  void discard(int num, Cardvector<Card*>& discard){
     discard.pop_back(hand[num]);
     hand.erase(num);
   }
