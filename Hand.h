@@ -125,3 +125,14 @@ void findRuns()
           
           
 };
+              
+              
+              
+              
+/*
+    (abs((( hand[k]->getOrder() - hand[k-1]->getOrder() ))) ==1)
+ &&
+ (abs(( ( hand[k]->getOrder())- (hand[k+1]->getOrder()) )) == 1)
+*/
+              
+              
