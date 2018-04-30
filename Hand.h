@@ -39,7 +39,11 @@ public:
     discard.pop_back(hand[num]);
     hand.erase(num);
   }
-      
+  
+  int handSize(){
+    return hand.size();
+  }
+                               
   void findMelds(){
     //Find sets
     for(int i = 0; i < hand.size(); i++){
