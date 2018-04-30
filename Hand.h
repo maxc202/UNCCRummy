@@ -38,16 +38,16 @@ void sortSets(){
                                    
 Card* discard(int num){
     Card* temp = hand[num];
-    hand.erase(num);
+    hand.erase(hands.begin()+num);
     return temp;
 }
                                 
 void retMelds(){
      for(int i = 0; i < runs.size(); i++){
-       hands.push_back(runs[i]);
+       hand.push_back(runs[i]);
      }
      for(int i = 0; i < sets.size(); i++){
-       hands.push_back(sets[i]);
+       handspush_back(sets[i]);
      }
      runs.clear();
      sets.clear();2 
@@ -73,15 +73,15 @@ void findSets()
             if((k+2)<=hand.sizeof() && hand[k].getOrder()==hand[k+2].getOrder())
             {
                 sets.push_back(hand[k+2]);
-                hand.erase(k+2);
+                hand.erase(hands.begin()+k+2);
                 
             }
             sets.push_back(hand[k-1]);
             sets.push_back(hand[k]);
             sets.push_back(hand[k+1]);
-            hand.erase(k);
-            hand.erase(k-1);
-            hand.erase(k+1);
+            hand.erase(hands.begin()+k);
+            hand.erase(hands.begin()+k-1);
+            hand.erase(hands.begin()+k+1);
             
             k=0;
         }
@@ -104,7 +104,7 @@ void findRuns()
             for(int u = k + count-1; u >= k; u--)
             {
                 runs.push_back(hand[u]);
-                hand.erase(u);
+                hand.erase(hands.begin()+u);
             }
             k=0;
     }
