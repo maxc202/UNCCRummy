@@ -51,6 +51,17 @@ public:
       for(int j = i; j
   }
   
+   void retMelds(){
+     for(int i = 0; i < runs.size(); i++){
+       hands.push_back(runs[i]);
+     }
+     for(int i = 0; i < sets.size(); i++){
+       hands.push_back(sets[i]);
+     }
+     runs.clear();
+     sets.clear();2 
+   }
+  
   int checkDeadwood(){
     int deadwood = 0
     for(int i = 0; i < hand.size()-1; i++){
