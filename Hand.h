@@ -16,11 +16,8 @@ private:
 public:
   
   bool way2sort(Card* i, Card* j) {return *i < *j);
+  bool dumbsort(Card* i, Card* j) {return *i > *j);
                                    
-  Hand(){
-    
-  }
-  
   void draw(vector<Card*>& deck){
     hand.push_back(deck.back());
     deck.pop_back();
@@ -32,6 +29,10 @@ public:
                                    
   void sortRuns(){
       sort(runs.begin(), runs.end(), way2Sort);
+  }
+                                   
+  void sortSets(){
+   sort(sets.begin(), sets.end(), dumbsort); 
   }
                                    
   void discard(int num, Cardvector<Card*>& discard){
