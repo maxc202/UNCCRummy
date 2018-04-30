@@ -18,9 +18,8 @@ public:
   bool way2sort(Card* i, Card* j) {return *i < *j);
   bool dumbsort(Card* i, Card* j) {return *i > *j);
                                    
-  void draw(vector<Card*>& deck){
-    hand.push_back(deck.back());
-    deck.pop_back();
+  void draw(Card* a){
+    hand.push_back(a);
   }
    
   void sortHand(){                                 
@@ -35,15 +34,12 @@ public:
    sort(sets.begin(), sets.end(), dumbsort); 
   }
                                    
-  void discard(int num, Cardvector<Card*>& discard){
-    discard.pop_back(hand[num]);
+  Card* discard(int num){
+    Card* temp = hand[num];
     hand.erase(num);
+    return temp;
   }
-  
-  int handSize(){
-    return hand.size();
-  }
-                               
+                                
   void findMelds(){
     //Find sets
     for(int i = 0; i < hand.size(); i++){
