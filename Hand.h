@@ -23,8 +23,9 @@ public:
     deck.pop_back();
   }
   
-  Card* discard(Cardvector<Card*>& discard){
-   // temp = 
+  Card* discard(int num, Cardvector<Card*>& discard){
+    discard.pop_back(hand[num]);
+    hand.erase(num);
   }
       
   void findMelds(){
