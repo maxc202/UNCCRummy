@@ -29,6 +29,7 @@ public:
     int getOrder();
     //Overloaded Operators
     bool operator < (const Card &);
+    bool operator > (const Card &);
     friend ostream& operator << (ostream &, Card & ); /*
     J❤
     */

@@ -96,6 +96,16 @@ bool Card::operator < (const Card &right)
         return false;
 }
 
+bool Card::operator > (const Card &right)
+{
+    if(order > right.order)
+        return true;
+    else if((order==right.order)&&(suitnum>right.suitnum))
+        return true;
+    else
+        return false;
+}
+
 ostream& operator << (ostream &strm, Card &French)
 {
     if(French.order==10)
