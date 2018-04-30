@@ -14,8 +14,7 @@ private:
   vector<Card*> sets;
 public:
   Hand(){
-    for(int i = 0; i < 10; i++){
-      this.draw(vector<Card*> deck);
+    
   }
   
   void draw(vector<Card*>& deck){
