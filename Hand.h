@@ -31,6 +31,6 @@ public:
     //Find sets
     for(int i = 0; i < hand.size(); i++){
       int count = 1;
-      for(int j = i; j
+      for(int j = i; j < hand.size(); j++){
   }
 };
