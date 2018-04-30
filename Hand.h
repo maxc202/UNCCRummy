@@ -42,14 +42,7 @@ void sortSets(){
     return temp;
   }
                                 
-  void findMelds(){
-    //Find sets
-    for(int i = 0; i < hand.size(); i++){
-      int count = 1;
-      for(int j = i; j
-  }
-  
-   void retMelds(){
+void retMelds(){
      for(int i = 0; i < runs.size(); i++){
        hands.push_back(runs[i]);
      }
@@ -58,7 +51,7 @@ void sortSets(){
      }
      runs.clear();
      sets.clear();2 
-   }
+}
   
   int checkDeadwood(){
     int deadwood = 0
