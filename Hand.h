@@ -62,7 +62,7 @@ class Hand{
 	    }
 	    return deadwood;
 	}
-	          
+	/*          
 	void findSets()
 	{
 	    sort(hand.begin(),hand.end(), dumbsort);
@@ -84,7 +84,28 @@ class Hand{
 	        }
 	    }
 	}
-	    
+	  */
+	
+	
+	void findSets(){
+    sort(hand.begin(), hand.end(), dumbsort);
+    for(int k = 0; k != (hand.sizeof - 1); k++)
+    {
+        int curr = k;
+        int count = 1;
+        while((hand[curr+1]->getOrder() == hand[curr]->getOrder()))
+        {
+            count++;
+        }
+              if(count >= 3){
+                  for(int u = k + count-1; u >= k; u--){
+                      sets.push_back(hand[u]);
+                      hand.erase(hands.begin()+u);
+                  }
+                  k=0;
+              }
+              }
+              };
 	                        
 	void findRuns(){
 	    sortHand();
