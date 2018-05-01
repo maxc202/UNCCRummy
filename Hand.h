@@ -90,11 +90,11 @@ class Hand{
    	void findSets()
 	{
     		sort(hand.begin(), hand.end(), dumbsort);
-    		for(int k = 0; k != (hand.sizeof - 1); k++)
+    		for(int k = 0; (k != (hand.sizeof - 1))&& count<5; k++)
    		{
        			 int curr = k;
         		 int count = 1;
-       			 while((hand[curr+1]->getOrder() == hand[curr]->getOrder()))
+       			 while((hand[curr+1]->getOrder() == hand[curr]->getOrder()) && count <5)
         		{
            			 count++;
        			}
@@ -107,6 +107,7 @@ class Hand{
                   		}
                  	   k=0;
              		}
+			else{ break;}
 		}
 	}
 //*******************************************************************************************************************************************	                        
